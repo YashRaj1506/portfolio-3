@@ -250,7 +250,7 @@ export default function SimpleWelcome() {
         <div className="flex items-center space-x-6 px-8 py-4 bg-gray-900/60 backdrop-blur-md rounded-full border border-gray-800 shadow-lg hover:shadow-glow transition-all duration-300">
           {/* GitHub */}
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/YashRaj1506"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
@@ -261,7 +261,7 @@ export default function SimpleWelcome() {
           
           {/* Twitter */}
           <a
-            href="https://twitter.com/yourusername"
+            href="https://x.com/Yash44207966"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter Profile"
@@ -272,7 +272,7 @@ export default function SimpleWelcome() {
           
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/yash-raj-83933922a/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile"
@@ -283,7 +283,7 @@ export default function SimpleWelcome() {
           
           {/* Email */}
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:yashraj504300@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Send Email"
