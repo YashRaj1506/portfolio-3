@@ -111,8 +111,12 @@ export default function RoboticLoader() {
         >
           <motion.div 
             className="h-full bg-gradient-to-r from-blue-500 via-cyan-500 to-green-500 rounded-full"
-            style={{ width: `${progress}%` }}
             initial={{ width: "0%" }}
+            animate={{ width: `${progress}%` }}
+            transition={{ 
+              duration: 0.3, 
+              ease: "easeOut"
+            }}
           />
         </motion.div>
         
