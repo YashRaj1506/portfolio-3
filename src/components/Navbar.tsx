@@ -75,7 +75,13 @@ export default function Navbar() {
         {/* Desktop Menu / Middle Section */}
         <div className="hidden md:flex items-center justify-center flex-1 px-6">
           <div className="flex items-center space-x-6 mx-auto">
-            {['Experience', 'Projects', 'Blog'].map((item) => (
+            <Link 
+              href="/experience" 
+              className="text-white text-sm font-medium hover:text-blue-400 transition-colors"
+            >
+              Experience
+            </Link>
+            {['Projects', 'Blog'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`}
@@ -131,7 +137,14 @@ export default function Navbar() {
           transition={{ duration: 0.3 }}
         >
           <div className="flex flex-col py-4 px-6">
-            {['Experience', 'Projects', 'Blog'].map((item) => (
+            <Link 
+              href="/experience" 
+              className="text-gray-300 hover:text-blue-400 transition-colors py-2 text-sm"
+              onClick={() => setMenuOpen(false)}
+            >
+              Experience
+            </Link>
+            {['Projects', 'Blog'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`}
