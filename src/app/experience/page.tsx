@@ -7,6 +7,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { TracingBeam } from '@/components/ui/tracing-beam';
 import { calsans } from '@/fonts';
 import { twMerge } from 'tailwind-merge';
+import Image from 'next/image';
 
 export default function Experience() {
   return (
@@ -78,6 +79,19 @@ export default function Experience() {
                   <p className={twMerge(calsans.className, "text-2xl text-white mb-4")}>
                     {item.role} @ {item.organization}
                   </p>
+                  
+                  {/* Image container */}
+                  {item.image && (
+                    <div className="mb-6 rounded-xl overflow-hidden">
+                      <Image 
+                        src={item.image} 
+                        alt={`${item.organization} visual`} 
+                        width={600} 
+                        height={340}
+                        className="w-full object-cover rounded-xl hover:scale-105 transition-transform duration-500 ease-in-out"
+                      />
+                    </div>
+                  )}
 
                   <div className="text-sm prose prose-sm dark:prose-invert">
                     <div className="space-y-3 text-gray-300">
@@ -170,100 +184,110 @@ const experienceData = [
     period: "2025 - Present",
     title: "Backend Engineer",
     company: "Yarasi Tech",
-    description: [
-      "Led development of a high-performance financial dashboard that processes over 1 million transactions daily, improving client reporting efficiency by 35%.",
-      "Architected and implemented a microservices infrastructure that reduced system downtime by 75% and improved scalability for peak usage periods.",
-      "Mentored a team of 5 junior developers, implementing code review processes and best practices that improved code quality metrics by 40%.",
-      "Collaborated with product and design teams to create intuitive user interfaces that increased customer satisfaction scores from 72% to 91%."
+    "description": [
+      "Built and deployed the infrastructure for a scalable API service from scratch, ensuring high availability and modular design.",
+      "Collaborated with the team to design and implement scalable APIs using Django and GraphQL, optimizing performance and maintainability.",
+      "Led efforts to enhance application security through containerization and Docker best practices, along with enforcing secure API patterns.",
+      "Performed large-scale web scraping using Selenium and BeautifulSoup to collect and process high-volume data efficiently for analytics."
     ],
-    technologies: ["React", "Node.js", "AWS", "GraphQL", "Docker", "MongoDB", "TypeScript"]
+    technologies: ["Django","GraphQL","Docker","AWS","System Design","Selenium","BeautifulSoup","Web Scraping"]
+      
   },
   {
-    period: "2018 - 2021",
-    title: "Backend Developer",
-    company: "DataFlow Systems",
-    description: [
-      "Developed and maintained RESTful APIs that processed over 500,000 requests daily with 99.9% uptime.",
-      "Implemented automated testing infrastructure that reduced bugs in production by 60% and deployment time by 45%.",
-      "Optimized database queries that improved application response time by 78%, significantly enhancing user experience.",
-      "Integrated third-party services and payment gateways that expanded platform functionality and increased revenue by 28%."
+    "period": "2025 - present",
+    "title": "Individual Member",
+    "company": "Django Software Foundation",
+    "description": [
+      "Selected as an individual member of the Django Software Foundation by the board in recognition of contributions to the Django ecosystem."
     ],
-    technologies: ["Python", "Django", "PostgreSQL", "Redis", "AWS", "Docker", "Celery"]
+    "technologies": ["Django", "Open Source", "Community Involvement"]
   },
   {
-    period: "2016 - 2018",
-    title: "Frontend Developer",
-    company: "WebVision Creative",
-    description: [
-      "Developed responsive web applications that increased mobile user engagement by 45% and reduced bounce rate by 30%.",
-      "Created and maintained a component library that accelerated development time for new features by 60%.",
-      "Collaborated with UX designers to implement accessibility improvements that brought the platform to WCAG 2.1 AA compliance.",
-      "Utilized performance optimization techniques that improved page load speeds by 35% and Google Lighthouse scores from 65 to 92."
+    "period": "2024 - Present",
+    "title": "Open Source Developer",
+    "company": "Django Software Foundation",
+    "description": [
+      "Contributed to the core source code of the Django framework, which powers major platforms like Instagram, Spotify, and Pinterest.",
+      "Worked on key areas including Django's async testing framework, file storage system, docstrings, and official documentation.",
+      "Recognized and nominated as an individual member of the Django Software Foundation for impactful open-source contributions.",
+      "Selected as a mentee in the prestigious Djangonaut Space program to further contribute to Django under mentorship from core contributors."
     ],
-    technologies: ["JavaScript", "React", "Redux", "SASS", "Webpack", "Jest", "Figma"]
+    "technologies": ["Python", "Django", "AsyncIO", "Testing Frameworks", "Documentation", "Open Source"]
   },
-  {
-    period: "2014 - 2016",
-    title: "Junior Software Engineer",
-    company: "Global Tech Solutions",
-    description: [
-      "Contributed to the development of an e-commerce platform serving 10,000+ daily active users.",
-      "Implemented payment processing systems that reduced checkout abandonment by 25%.",
-      "Fixed critical bugs and performance issues that improved application stability by 40%.",
-      "Participated in agile development processes, consistently meeting sprint goals and delivery timelines."
-    ],
-    technologies: ["PHP", "Laravel", "MySQL", "jQuery", "Git", "Bootstrap", "REST APIs"]
-  }
+//   {
+//     period: "2024 - 2025",
+//     title: "Freelance Developer",
+//     company: "Global Tech Solutions",
+//     description: [
+//       "Contributed to the development of an e-commerce platform serving 10,000+ daily active users.",
+//       "Implemented payment processing systems that reduced checkout abandonment by 25%.",
+//       "Fixed critical bugs and performance issues that improved application stability by 40%.",
+//       "Participated in agile development processes, consistently meeting sprint goals and delivery timelines."
+//     ],
+//     technologies: ["PHP", "Laravel", "MySQL", "jQuery", "Git", "Bootstrap", "REST APIs"]
+//   }
 ];
 
 // Community and Meetup data
 const communityData = [
-  {
-    period: "2022 - Present",
-    role: "Organizer",
-    organization: "LocalTech Meetup",
-    contribution: [
-      "Founded and grew a local developer meetup from 15 to 150+ active members over 18 months.",
-      "Organized and hosted 24 technical workshops and networking events with industry speakers.",
-      "Created a mentorship program connecting junior developers with senior engineers that resulted in 12 job placements.",
-      "Developed partnerships with 8 local companies to provide sponsorship and event spaces."
-    ],
-    topics: ["Community Building", "Technical Workshops", "Networking", "Developer Education"]
-  },
-  {
-    period: "2020 - Present",
-    role: "Open Source Contributor",
-    organization: "Web Developer Community",
-    contribution: [
-      "Contributed 30+ merged pull requests to popular open source projects in the JavaScript ecosystem.",
-      "Created and maintained documentation that improved onboarding experience for new contributors.",
-      "Spoke at 6 community conferences about best practices in front-end development and testing.",
-      "Mentored 12 first-time contributors through their initial open source contributions."
-    ],
-    topics: ["Open Source", "Documentation", "JavaScript", "Testing", "Mentorship"]
-  },
-  {
-    period: "2019 - 2021",
-    role: "Hackathon Mentor",
-    organization: "Tech for Good Initiative",
-    contribution: [
-      "Mentored 15+ teams during 8 social impact hackathons focused on solving local community challenges.",
-      "Provided technical guidance and code reviews for projects addressing accessibility, education, and environmental issues.",
-      "Led workshops on rapid prototyping and MVP development for non-technical participants.",
-      "Helped three teams advance their hackathon projects into funded startups."
-    ],
-    topics: ["Hackathons", "Social Impact", "Rapid Prototyping", "Technical Mentorship"]
-  },
-  {
-    period: "2017 - 2019",
-    role: "Workshop Facilitator",
-    organization: "Code Education Nonprofit",
-    contribution: [
-      "Taught programming fundamentals to 200+ underrepresented students in free weekend workshops.",
-      "Developed curriculum materials for Python and web development bootcamps.",
-      "Created a peer learning system that increased student completion rates by 35%.",
-      "Organized a career day that connected students with local companies, resulting in 15 internship placements."
-    ],
-    topics: ["Education", "Python", "Web Development", "Diversity in Tech", "Curriculum Development"]
-  }
+    {
+        "period": "2025",
+        "role": "Speaker",
+        "organization": "PyCon Italia",
+        "contribution": [
+          "Selected to speak at PyCon Italia 2025 in Bologna, Italy.",
+          "Delivering a talk on how Celery can be used to build better infrastructure designs in Django and other Python web frameworks by offloading CPU-intensive background tasks like scraping, ML processing, or bulk emailing.",
+          "The session covers Celery's architecture, message brokers (like Redis), and Python's concurrency models including multiprocessing, threading, eventlet, and gevent, with live demos to help developers understand real-time asynchronous processing."
+        ],
+        "topics": ["Celery", "Django", "Concurrency", "Infrastructure Design", "Python"],
+        "image": "/community/pycon.png" // Update this with the actual path or URL if needed
+      },
+    {
+        "period": "2022 - Present",
+        "role": "Organizer",
+        "organization": "DjangoIndia",
+        "contribution": [
+          "Helped organize and conduct multiple Django meetups across India to promote Django adoption and awareness.",
+          "Coordinated with speakers, venues, and sponsors to ensure smooth execution of events and workshops.",
+          "Facilitated community engagement through talks, Q&A sessions, and mentorship for aspiring Django developers."
+        ],
+        "topics": ["Community Building", "Event Coordination", "Mentorship", "Open Source Advocacy"],
+        "image": "/community/django_india.jpeg" // Local image path
+    },
+    {
+        "period": "Oct 2024 – Dec 2024",
+        "role": "Fellow",
+        "organization": "Djangonaut Space Program",
+        "contribution": [
+          "Selected as one of 14 global participants in the prestigious Djangonaut Space program by the Django Software Foundation.",
+          "Collaborated with Team Saturn on contributions to the Django Core project under the guidance of experienced mentors."
+        ],
+        "topics": ["Django", "Open Source", "Mentorship", "Core Contributions"],
+        "image": "/community/djnaut.png" // Update path as needed
+    },
+    {
+        "period": "2024 - 2025",
+        "role": "Speaker",
+        "organization": "FOSS United & DjangoIndia Meetups",
+        "contribution": [
+          "Passionate about sharing knowledge and giving talks based on my daily learning and open-source experiences.",
+          "Delivered sessions at FOSS United Delhi Meetup and DjangoIndia Meetup at IIIT Lucknow on Django and developer workflows."
+        ],
+        "topics": ["Community Engagement", "Public Speaking", "Open Source", "Knowledge Sharing"],
+        "image": "/community/spaker.JPG" // Update path as needed
+      },
+      
+//   {
+//     period: "2017 - 2019",
+//     role: "aa",
+//     organization: "Code Education Nonprofit",
+//     contribution: [
+//       "Taught programming fundamentals to 200+ underrepresented students in free weekend workshops.",
+//       "Developed curriculum materials for Python and web development bootcamps.",
+//       "Created a peer learning system that increased student completion rates by 35%.",
+//       "Organized a career day that connected students with local companies, resulting in 15 internship placements."
+//     ],
+//     topics: ["Education", "Python", "Web Development", "Diversity in Tech", "Curriculum Development"],
+//     image: "/community/workshop.jpg" // Local image path
+//   }
 ]; 
