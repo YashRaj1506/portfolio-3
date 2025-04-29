@@ -1,7 +1,6 @@
 "use client";
 
 import Navbar from '@/components/Navbar';
-import Link from 'next/link';
 import NavigationLink from '@/components/NavigationLink';
 import { FaArrowLeft } from 'react-icons/fa';
 import { TracingBeam } from '@/components/ui/tracing-beam';
@@ -25,33 +24,33 @@ export default function Experience() {
           </NavigationLink>
         </div>
         
-        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-500 via-cyan-400 to-green-500 bg-clip-text text-transparent mb-8">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-500 via-cyan-400 to-green-500 bg-clip-text text-transparent mb-6 md:mb-8">
           Professional Experience
         </h1>
         
-        <TracingBeam className="px-4">
-          <div className="max-w-2xl mx-auto antialiased pt-4 relative">
+        <TracingBeam className="px-2 sm:px-4">
+          <div className="max-w-2xl mx-auto antialiased pt-2 sm:pt-4 relative">
             {experienceData.map((item, index) => (
-              <div key={`experience-${index}`} className="mb-16">
-                <h2 className="bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
+              <div key={`experience-${index}`} className="mb-12 sm:mb-16">
+                <h2 className="bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-full text-xs sm:text-sm w-fit px-3 sm:px-4 py-1 mb-3 sm:mb-4">
                   {item.period}
                 </h2>
 
-                <p className={twMerge(calsans.className, "text-2xl text-white mb-4")}>
+                <p className={twMerge(calsans.className, "text-xl sm:text-2xl text-white mb-3 sm:mb-4")}>
                   {item.title} @ {item.company}
                 </p>
 
                 <div className="text-sm prose prose-sm dark:prose-invert">
-                  <div className="space-y-3 text-gray-300">
+                  <div className="space-y-2 sm:space-y-3 text-gray-300">
                     {item.description.map((desc, i) => (
                       <p key={i}>{desc}</p>
                     ))}
                   </div>
                   
                   {item.technologies && (
-                    <div className="mt-4">
-                      <h3 className="text-sm font-semibold text-blue-400 mb-2">Technologies Used:</h3>
-                      <div className="flex flex-wrap gap-2">
+                    <div className="mt-3 sm:mt-4">
+                      <h3 className="text-xs sm:text-sm font-semibold text-blue-400 mb-2">Technologies Used:</h3>
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         {item.technologies.map((tech, i) => (
                           <span key={i} className="px-2 py-1 text-xs rounded-full bg-gray-800 text-gray-300">
                             {tech}
@@ -65,24 +64,24 @@ export default function Experience() {
             ))}
             
             {/* Community and Meetups Section */}
-            <div className="pt-16 pb-8">
-              <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-500 via-pink-400 to-red-500 bg-clip-text text-transparent mb-8">
+            <div className="pt-12 sm:pt-16 pb-6 sm:pb-8">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-500 via-pink-400 to-red-500 bg-clip-text text-transparent mb-6 sm:mb-8">
                 Communities & Meetups
               </h1>
               
               {communityData.map((item, index) => (
-                <div key={`community-${index}`} className="mb-16">
-                  <h2 className="bg-gradient-to-br from-purple-600 to-pink-600 text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
+                <div key={`community-${index}`} className="mb-12 sm:mb-16">
+                  <h2 className="bg-gradient-to-br from-purple-600 to-pink-600 text-white rounded-full text-xs sm:text-sm w-fit px-3 sm:px-4 py-1 mb-3 sm:mb-4">
                     {item.period}
                   </h2>
 
-                  <p className={twMerge(calsans.className, "text-2xl text-white mb-4")}>
+                  <p className={twMerge(calsans.className, "text-xl sm:text-2xl text-white mb-3 sm:mb-4")}>
                     {item.role} @ {item.organization}
                   </p>
                   
                   {/* Image container */}
                   {item.image && (
-                    <div className="mb-6 rounded-xl overflow-hidden">
+                    <div className="mb-4 sm:mb-6 rounded-xl overflow-hidden">
                       <Image 
                         src={item.image} 
                         alt={`${item.organization} visual`} 
@@ -94,16 +93,16 @@ export default function Experience() {
                   )}
 
                   <div className="text-sm prose prose-sm dark:prose-invert">
-                    <div className="space-y-3 text-gray-300">
+                    <div className="space-y-2 sm:space-y-3 text-gray-300">
                       {item.contribution.map((contrib, i) => (
                         <p key={i}>{contrib}</p>
                       ))}
                     </div>
                     
                     {item.topics && (
-                      <div className="mt-4">
-                        <h3 className="text-sm font-semibold text-pink-400 mb-2">Focus Areas:</h3>
-                        <div className="flex flex-wrap gap-2">
+                      <div className="mt-3 sm:mt-4">
+                        <h3 className="text-xs sm:text-sm font-semibold text-pink-400 mb-2">Focus Areas:</h3>
+                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
                           {item.topics.map((topic, i) => (
                             <span key={i} className="px-2 py-1 text-xs rounded-full bg-gray-800 text-gray-300">
                               {topic}

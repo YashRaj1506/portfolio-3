@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import NavigationLink from './NavigationLink';
 
 export default function Navbar() {
@@ -26,14 +25,16 @@ export default function Navbar() {
   // Navbar variants for animation
   const navbarVariants = {
     expanded: {
-      width: "700px",
+      width: "calc(100% - 2rem)",
+      maxWidth: "700px",
       height: "4rem",
       backgroundColor: "rgba(0, 0, 0, 0.8)",
       backdropFilter: "blur(10px)",
       border: "1px solid rgba(59, 130, 246, 0.2)"
     },
     collapsed: {
-      width: "600px",
+      width: "calc(100% - 2rem)",
+      maxWidth: "600px",
       height: "3.5rem",
       backgroundColor: "rgba(0, 0, 0, 0.9)",
       backdropFilter: "blur(10px)",
@@ -49,9 +50,9 @@ export default function Navbar() {
   };
   
   return (
-    <div className="fixed top-6 left-0 right-0 z-50 flex items-center justify-center">
+    <div className="fixed top-4 sm:top-6 left-0 right-0 z-50 flex items-center justify-center">
       <motion.nav 
-        className="rounded-full flex items-center justify-between px-6"
+        className="rounded-full flex items-center justify-between px-4 sm:px-6"
         initial="expanded"
         animate={scrolled ? "collapsed" : "expanded"}
         variants={navbarVariants}
@@ -66,8 +67,8 @@ export default function Navbar() {
           variants={logoVariants}
         >
           <NavigationLink href="/" className="flex items-center space-x-2">
-            <div className="w-7 h-7 bg-white rounded-md flex items-center justify-center">
-              <span className="text-black font-bold text-sm">Y</span>
+            <div className="w-6 h-6 sm:w-7 sm:h-7 bg-white rounded-md flex items-center justify-center">
+              <span className="text-black font-bold text-xs sm:text-sm">Y</span>
             </div>
             <span className="font-bold text-white text-sm sm:text-base">Yash</span>
           </NavigationLink>
@@ -134,7 +135,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <motion.div 
-          className="absolute top-20 left-1/2 -translate-x-1/2 w-64 bg-black/90 backdrop-blur-md border border-blue-900/30 rounded-xl overflow-hidden"
+          className="absolute top-16 sm:top-20 left-1/2 -translate-x-1/2 w-[90%] sm:w-64 bg-black/90 backdrop-blur-md border border-blue-900/30 rounded-xl overflow-hidden"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}

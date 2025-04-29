@@ -1,7 +1,6 @@
 "use client";
 
 import Navbar from '@/components/Navbar';
-import Link from 'next/link';
 import NavigationLink from '@/components/NavigationLink';
 import { FaArrowLeft, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { TracingBeam } from '@/components/ui/tracing-beam';
@@ -25,24 +24,24 @@ export default function Projects() {
           </NavigationLink>
         </div>
         
-        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-8">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6 md:mb-8">
           My Projects
         </h1>
         
-        <TracingBeam className="px-4">
-          <div className="max-w-4xl mx-auto antialiased pt-4 relative">
+        <TracingBeam className="px-2 sm:px-4">
+          <div className="max-w-4xl mx-auto antialiased pt-2 sm:pt-4 relative">
             {projectsData.map((project, index) => (
-              <div key={`project-${index}`} className="mb-24">
-                <h2 className="bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
+              <div key={`project-${index}`} className="mb-16 sm:mb-24">
+                <h2 className="bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-full text-xs sm:text-sm w-fit px-3 sm:px-4 py-1 mb-3 sm:mb-4">
                   {project.category}
                 </h2>
 
-                <p className={twMerge(calsans.className, "text-2xl text-white mb-4")}>
+                <p className={twMerge(calsans.className, "text-xl sm:text-2xl text-white mb-3 sm:mb-4")}>
                   {project.title}
                 </p>
 
                 {/* Project image */}
-                <div className="mb-6 rounded-xl overflow-hidden border border-gray-800 shadow-xl transition-all duration-500 hover:shadow-blue-900/20 hover:border-gray-700">
+                <div className="mb-4 sm:mb-6 rounded-xl overflow-hidden border border-gray-800 shadow-xl transition-all duration-500 hover:shadow-blue-900/20 hover:border-gray-700">
                   <Image 
                     src={project.imagePath} 
                     alt={project.title}
@@ -53,20 +52,20 @@ export default function Projects() {
                 </div>
 
                 <div className="prose prose-sm dark:prose-invert">
-                  <div className="space-y-3 text-gray-300">
+                  <div className="space-y-2 sm:space-y-3 text-gray-300 text-sm sm:text-base">
                     {project.description.map((desc, i) => (
                       <p key={i}>{desc}</p>
                     ))}
                   </div>
                   
                   {/* Links */}
-                  <div className="mt-6 flex flex-wrap gap-4">
+                  <div className="mt-4 sm:mt-6 flex flex-wrap gap-3 sm:gap-4">
                     {project.githubLink && (
                       <a 
                         href={project.githubLink} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-md transition-colors text-white"
+                        className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-800 hover:bg-gray-700 rounded-md transition-colors text-white text-sm"
                       >
                         <FaGithub /> GitHub
                       </a>
@@ -77,7 +76,7 @@ export default function Projects() {
                         href={project.liveLink} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 bg-blue-800 hover:bg-blue-700 rounded-md transition-colors text-white"
+                        className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-800 hover:bg-blue-700 rounded-md transition-colors text-white text-sm"
                       >
                         <FaExternalLinkAlt /> Live Demo
                       </a>
@@ -86,11 +85,11 @@ export default function Projects() {
                   
                   {/* Technologies */}
                   {project.technologies && (
-                    <div className="mt-6">
-                      <h3 className="text-sm font-semibold text-blue-400 mb-2">Technologies Used:</h3>
-                      <div className="flex flex-wrap gap-2">
+                    <div className="mt-4 sm:mt-6">
+                      <h3 className="text-xs sm:text-sm font-semibold text-blue-400 mb-2">Technologies Used:</h3>
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         {project.technologies.map((tech, i) => (
-                          <span key={i} className="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300 border border-gray-700">
+                          <span key={i} className="px-2 sm:px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-300 border border-gray-700">
                             {tech}
                           </span>
                         ))}

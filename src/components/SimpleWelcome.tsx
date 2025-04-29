@@ -187,43 +187,43 @@ export default function SimpleWelcome() {
       </motion.div>
       
       {/* Main content */}
-      <div className="max-w-5xl mx-auto px-4 py-24 flex flex-col items-center space-y-16 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 py-16 sm:py-24 flex flex-col items-center space-y-8 sm:space-y-16 relative z-10">
         <div className="text-center">
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-500 via-cyan-400 to-green-500 bg-clip-text text-transparent mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-500 via-cyan-400 to-green-500 bg-clip-text text-transparent mb-4 sm:mb-6">
             Hi, I&apos;m Yash
           </h1>
           
-          <div className="text-gray-400 text-lg md:text-xl">
+          <div className="text-gray-400 text-base sm:text-lg md:text-xl">
             Welcome to my portfolio
           </div>
         </div>
         
         {/* Intro Text */}
-        <div className="w-full max-w-4xl px-6 text-center">
+        <div className="w-full max-w-4xl px-2 sm:px-6 text-center">
           <div className="overflow-hidden rounded-lg shadow-2xl border border-gray-700 transform perspective-1000 transition-all duration-300 hover:shadow-glow hover:scale-[1.01]">
             {/* Terminal Header */}
-            <div className="bg-gray-900 px-4 py-2 flex items-center justify-between border-b border-gray-700">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors duration-200"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors duration-200"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors duration-200"></div>
+            <div className="bg-gray-900 px-3 sm:px-4 py-2 flex items-center justify-between border-b border-gray-700">
+              <div className="flex items-center space-x-1.5 sm:space-x-2">
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors duration-200"></div>
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors duration-200"></div>
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors duration-200"></div>
               </div>
               <div className="text-xs text-gray-400 font-mono">bash ~ /portfolio</div>
               <div className="w-4"></div> {/* Spacer */}
             </div>
             
             {/* Terminal Content */}
-            <div className="bg-[#0d1117] p-5 text-left font-mono text-sm md:text-base overflow-hidden">
+            <div className="bg-[#0d1117] p-3 sm:p-5 text-left font-mono text-xs sm:text-sm md:text-base overflow-hidden">
               <AnimatedText text="whoami" className="mb-2" delay={0.5} isCommand={true} />
               
               <AnimatedText 
                 text="Hi there, my name is Yash Raj (kai) - Python backend engineer, Django contributor, and an"
-                className="text-gray-300 mb-0 leading-relaxed break-words"
+                className="text-gray-300 mb-0 leading-relaxed break-words text-xs sm:text-sm md:text-base"
                 delay={1}
               />
               <AnimatedText 
                 text="Individual member at Django Software Foundation."
-                className="text-gray-300 mb-4 leading-relaxed break-words"
+                className="text-gray-300 mb-4 leading-relaxed break-words text-xs sm:text-sm md:text-base"
                 delay={1.5}
               />
               
@@ -231,7 +231,7 @@ export default function SimpleWelcome() {
               
               <AnimatedText 
                 text="I do system design & architecture, devops and I love open source."
-                className="text-gray-300 mb-4 leading-relaxed break-words"
+                className="text-gray-300 mb-4 leading-relaxed break-words text-xs sm:text-sm md:text-base"
                 delay={4.5}
               />
               
@@ -239,7 +239,7 @@ export default function SimpleWelcome() {
               
               <AnimatedText
                 text="Organizer at Django India Community, and a Djangonaut Space fellow."
-                className="text-gray-300 mb-4 leading-relaxed break-words"
+                className="text-gray-300 mb-4 leading-relaxed break-words text-xs sm:text-sm md:text-base"
                 delay={6.5}
               />
               
@@ -247,7 +247,7 @@ export default function SimpleWelcome() {
               
               <AnimatedText
                 text="I love attending and giving talks at Conferences and meetups."
-                className="text-gray-300 leading-relaxed break-words"
+                className="text-gray-300 leading-relaxed break-words text-xs sm:text-sm md:text-base"
                 delay={8.5}
               />
               
@@ -267,17 +267,17 @@ export default function SimpleWelcome() {
       </div>
       
       {/* Floating Dock */}
-      <div className="fixed bottom-10 z-40">
-        <div className="flex items-center space-x-6 px-8 py-4 bg-gray-900/60 backdrop-blur-md rounded-full border border-gray-800 shadow-lg hover:shadow-glow transition-all duration-300">
+      <div className="fixed bottom-6 sm:bottom-10 z-40">
+        <div className="flex items-center space-x-3 sm:space-x-6 px-4 sm:px-8 py-3 sm:py-4 bg-gray-900/60 backdrop-blur-md rounded-full border border-gray-800 shadow-lg hover:shadow-glow transition-all duration-300">
           {/* GitHub */}
           <a
             href="https://github.com/YashRaj1506"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 hover:text-white transition-colors duration-300"
+            className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-800 hover:bg-gray-700 hover:text-white transition-colors duration-300"
           >
-            <FaGithub className="text-blue-500 text-xl hover:text-blue-400 transition-colors" />
+            <FaGithub className="text-blue-500 text-lg sm:text-xl hover:text-blue-400 transition-colors" />
           </a>
           
           {/* Twitter */}
@@ -286,9 +286,9 @@ export default function SimpleWelcome() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter Profile"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 hover:text-white transition-colors duration-300"
+            className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-800 hover:bg-gray-700 hover:text-white transition-colors duration-300"
           >
-            <FaTwitter className="text-blue-500 text-xl hover:text-blue-400 transition-colors" />
+            <FaTwitter className="text-blue-500 text-lg sm:text-xl hover:text-blue-400 transition-colors" />
           </a>
           
           {/* LinkedIn */}
@@ -297,9 +297,9 @@ export default function SimpleWelcome() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 hover:text-white transition-colors duration-300"
+            className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-800 hover:bg-gray-700 hover:text-white transition-colors duration-300"
           >
-            <FaLinkedin className="text-blue-500 text-xl hover:text-blue-400 transition-colors" />
+            <FaLinkedin className="text-blue-500 text-lg sm:text-xl hover:text-blue-400 transition-colors" />
           </a>
           
           {/* Email */}
@@ -308,9 +308,9 @@ export default function SimpleWelcome() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Send Email"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 hover:text-white transition-colors duration-300"
+            className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-800 hover:bg-gray-700 hover:text-white transition-colors duration-300"
           >
-            <MdEmail className="text-blue-500 text-xl hover:text-blue-400 transition-colors" />
+            <MdEmail className="text-blue-500 text-lg sm:text-xl hover:text-blue-400 transition-colors" />
           </a>
         </div>
       </div>

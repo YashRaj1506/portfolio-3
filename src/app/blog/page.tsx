@@ -1,7 +1,6 @@
 "use client";
 
 import Navbar from '@/components/Navbar';
-import Link from 'next/link';
 import NavigationLink from '@/components/NavigationLink';
 import { FaArrowLeft } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -34,7 +33,7 @@ export default function Blog() {
         {/* Coming Soon Content */}
         <div className="max-w-4xl mx-auto text-center">
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-8"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6 sm:mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -43,7 +42,7 @@ export default function Blog() {
           </motion.h1>
           
           <motion.div
-            className="relative w-32 h-32 mx-auto mb-12"
+            className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-8 sm:mb-12"
             initial={{ scale: 0 }}
             animate={{ scale: 1, rotate: 360 }}
             transition={{ 
@@ -55,16 +54,16 @@ export default function Blog() {
           >
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-spin-slow" style={{ animationDuration: '10s' }}></div>
             <div className="absolute inset-2 rounded-full bg-black"></div>
-            <div className="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold">!</div>
+            <div className="absolute inset-0 flex items-center justify-center text-white text-2xl sm:text-3xl font-bold">!</div>
           </motion.div>
           
           <motion.p 
-            className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto"
+            className="text-base sm:text-xl text-gray-300 mb-8 sm:mb-12 max-w-2xl mx-auto px-4 sm:px-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
           >
-            I'm currently working on some exciting content for the blog section. Check back soon for articles about web development, Django, Python tips, and more!
+            I&apos;m currently working on some exciting content for the blog section. Check back soon for articles about web development, Django, Python tips, and more!
           </motion.p>
           
           <motion.div
@@ -74,7 +73,7 @@ export default function Blog() {
           >
             <NavigationLink 
               href="/" 
-              className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/20"
+              className="inline-flex items-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm sm:text-base font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/20"
             >
               Return to Homepage
             </NavigationLink>
