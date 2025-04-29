@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 // Background particle component
-const Particle = ({ index }: { index: number }) => {
+const Particle = () => {
   const size = Math.random() * 3 + 1;
   const initialX = Math.random() * 100;
   const initialY = Math.random() * 100;
@@ -33,7 +33,7 @@ const Particle = ({ index }: { index: number }) => {
 };
 
 // Circuit line component
-const CircuitLine = ({ index }: { index: number }) => {
+const CircuitLine = () => {
   const width = Math.random() * 100 + 50;
   const height = 1;
   const initialX = Math.random() * 100;
@@ -72,14 +72,15 @@ const DigitalCounter = ({ progress }: { progress: number }) => {
 // Main loader component
 export default function RoboticLoader() {
   const [progress, setProgress] = useState(0);
-  const [loading, setLoading] = useState(true);
   
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prevProgress) => {
         if (prevProgress >= 100) {
           clearInterval(timer);
-          setTimeout(() => setLoading(false), 500);
+          setTimeout(() => {
+            // Remove the setTimeout callback body as it's not needed
+          }, 500);
           return 100;
         }
         return prevProgress + 1;
@@ -90,8 +91,8 @@ export default function RoboticLoader() {
   }, []);
 
   // Particles and circuit lines
-  const particles = Array.from({ length: 50 }, (_, i) => <Particle key={`particle-${i}`} index={i} />);
-  const circuitLines = Array.from({ length: 15 }, (_, i) => <CircuitLine key={`circuit-${i}`} index={i} />);
+  const particles = Array.from({ length: 50 }, (_, i) => <Particle key={`particle-${i}`} />);
+  const circuitLines = Array.from({ length: 15 }, (_, i) => <CircuitLine key={`circuit-${i}`} />);
 
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-black">

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { FaArrowLeft } from 'react-icons/fa';

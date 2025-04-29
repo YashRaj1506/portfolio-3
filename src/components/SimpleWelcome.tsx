@@ -169,7 +169,7 @@ export default function SimpleWelcome() {
       <div className="max-w-5xl mx-auto px-4 py-24 flex flex-col items-center space-y-16 relative z-10">
         <div className="text-center">
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-500 via-cyan-400 to-green-500 bg-clip-text text-transparent mb-6">
-            Hi, I'm Yash
+            Hi, I&apos;m Yash
           </h1>
           
           <div className="text-gray-400 text-lg md:text-xl">

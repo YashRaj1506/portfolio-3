@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import { FaArrowLeft } from 'react-icons/fa';
 import { SiPython, SiDjango, SiReact, SiFastapi, SiC, SiJavascript, 
-         SiHtml5, SiCss3, SiGit, SiGithub, SiDocker, SiLinux, SiNginx, SiAmazon, 
+         SiHtml5, SiGit, SiGithub, SiDocker, SiLinux, SiNginx, SiAmazon, 
          SiGraphql, SiPostgresql, SiSqlite, SiMysql } from 'react-icons/si';
 import { DiJava, DiGo } from 'react-icons/di';
 import { TbLetterT } from 'react-icons/tb';

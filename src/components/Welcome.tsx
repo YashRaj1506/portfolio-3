@@ -133,7 +133,7 @@ export default function Welcome() {
             }}
             style={{ backgroundSize: "200% auto" }}
           >
-            Hi, I'm Yash
+            Hi, I&apos;m Yash
           </motion.h1>
           
           <motion.div 
