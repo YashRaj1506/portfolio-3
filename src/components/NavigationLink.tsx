@@ -22,7 +22,7 @@ export default function NavigationLink({
 }: NavigationLinkProps) {
   const router = useRouter();
   
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = (_e: React.MouseEvent) => {
     // Attempt to set the navigation timestamp in sessionStorage
     if (typeof window !== 'undefined') {
       try {
