@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import NavigationLink from './NavigationLink';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -64,43 +65,46 @@ export default function Navbar() {
           className="flex items-center"
           variants={logoVariants}
         >
-          <Link href="/" className="flex items-center space-x-2">
+          <NavigationLink href="/" className="flex items-center space-x-2">
             <div className="w-7 h-7 bg-white rounded-md flex items-center justify-center">
               <span className="text-black font-bold text-sm">Y</span>
             </div>
             <span className="font-bold text-white text-sm sm:text-base">Yash</span>
-          </Link>
+          </NavigationLink>
         </motion.div>
         
         {/* Desktop Menu / Middle Section */}
         <div className="hidden md:flex items-center justify-center flex-1 px-6">
           <div className="flex items-center space-x-6 mx-auto">
-            <Link 
+            <NavigationLink 
               href="/experience" 
               className="text-white text-sm font-medium hover:text-blue-400 transition-colors"
             >
               Experience
-            </Link>
-            {['Projects', 'Blog'].map((item) => (
-              <a 
-                key={item} 
-                href={`#${item.toLowerCase()}`}
-                className="text-white text-sm font-medium hover:text-blue-400 transition-colors"
-              >
-                {item}
-              </a>
-            ))}
+            </NavigationLink>
+            <NavigationLink 
+              href="/projects" 
+              className="text-white text-sm font-medium hover:text-blue-400 transition-colors"
+            >
+              Projects
+            </NavigationLink>
+            <NavigationLink 
+              href="/blog"
+              className="text-white text-sm font-medium hover:text-blue-400 transition-colors"
+            >
+              Blog
+            </NavigationLink>
           </div>
         </div>
         
         {/* Buttons / Right Section */}
         <div className="hidden md:flex items-center">
-          <Link 
+          <NavigationLink 
             href="/tech-stack" 
             className="bg-white text-black text-sm font-medium px-3 py-1.5 rounded-md hover:bg-gray-100 transition-colors"
           >
             Tech Stack
-          </Link>
+          </NavigationLink>
         </div>
         
         {/* Mobile Menu Toggle */}
@@ -137,31 +141,35 @@ export default function Navbar() {
           transition={{ duration: 0.3 }}
         >
           <div className="flex flex-col py-4 px-6">
-            <Link 
+            <NavigationLink 
               href="/experience" 
               className="text-gray-300 hover:text-blue-400 transition-colors py-2 text-sm"
               onClick={() => setMenuOpen(false)}
             >
               Experience
-            </Link>
-            {['Projects', 'Blog'].map((item) => (
-              <a 
-                key={item} 
-                href={`#${item.toLowerCase()}`}
-                className="text-gray-300 hover:text-blue-400 transition-colors py-2 text-sm"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
+            </NavigationLink>
+            <NavigationLink 
+              href="/projects" 
+              className="text-gray-300 hover:text-blue-400 transition-colors py-2 text-sm"
+              onClick={() => setMenuOpen(false)}
+            >
+              Projects
+            </NavigationLink>
+            <NavigationLink 
+              href="/blog"
+              className="text-gray-300 hover:text-blue-400 transition-colors py-2 text-sm"
+              onClick={() => setMenuOpen(false)}
+            >
+              Blog
+            </NavigationLink>
             <div className="flex flex-col space-y-3 mt-4 pt-4 border-t border-gray-800">
-              <Link 
+              <NavigationLink 
                 href="/tech-stack" 
                 className="bg-white text-black font-medium px-4 py-2 rounded-md hover:bg-gray-100 transition-colors text-center text-sm"
                 onClick={() => setMenuOpen(false)}
               >
                 Tech Stack
-              </Link>
+              </NavigationLink>
             </div>
           </div>
         </motion.div>

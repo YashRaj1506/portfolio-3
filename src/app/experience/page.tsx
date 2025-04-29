@@ -2,6 +2,7 @@
 
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
+import NavigationLink from '@/components/NavigationLink';
 import { FaArrowLeft } from 'react-icons/fa';
 import { TracingBeam } from '@/components/ui/tracing-beam';
 import { calsans } from '@/fonts';
@@ -18,10 +19,10 @@ export default function Experience() {
       
       <div className="pt-28 pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="flex items-center mb-6">
-          <Link href="/" className="flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+          <NavigationLink href="/" className="flex items-center text-blue-400 hover:text-blue-300 transition-colors">
             <FaArrowLeft className="mr-2" />
             <span>Back to Home</span>
-          </Link>
+          </NavigationLink>
         </div>
         
         <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-500 via-cyan-400 to-green-500 bg-clip-text text-transparent mb-8">
@@ -119,9 +120,9 @@ export default function Experience() {
               <div className="pt-12 pb-24 text-center">
                 <div className="w-full max-w-xs mx-auto h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-8"></div>
                 <p className="text-gray-500 text-sm mb-3">Thanks for viewing my experience journey</p>
-                <Link href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">
+                <NavigationLink href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">
                   Return to home
-                </Link>
+                </NavigationLink>
               </div>
             </div>
           </div>

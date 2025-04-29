@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <rect width="800" height="450" rx="12" fill="url(#gradient)"/>
+  
+  <!-- Web page representation -->
+  <rect x="100" y="120" width="260" height="240" rx="8" fill="#1F2937" stroke="#374151" stroke-width="2"/>
+  <rect x="100" y="120" width="260" height="30" rx="8" fill="#374151"/>
+  <circle cx="120" cy="135" r="5" fill="#EF4444"/>
+  <circle cx="140" cy="135" r="5" fill="#F59E0B"/>
+  <circle cx="160" cy="135" r="5" fill="#10B981"/>
+  
+  <!-- Web page content -->
+  <rect x="120" y="170" width="220" height="20" rx="3" fill="#4B5563" opacity="0.8"/>
+  <rect x="120" y="200" width="160" height="20" rx="3" fill="#4B5563" opacity="0.8"/>
+  <rect x="120" y="230" width="220" height="8" rx="2" fill="#6B7280" opacity="0.6"/>
+  <rect x="120" y="245" width="190" height="8" rx="2" fill="#6B7280" opacity="0.6"/>
+  <rect x="120" y="260" width="210" height="8" rx="2" fill="#6B7280" opacity="0.6"/>
+  <rect x="120" y="290" width="80" height="25" rx="4" fill="#3B82F6" opacity="0.8"/>
+  <rect x="210" y="290" width="80" height="25" rx="4" fill="#6366F1" opacity="0.8"/>
+  
+  <!-- Spider/crawler -->
+  <circle cx="450" cy="150" r="30" fill="#4F46E5" opacity="0.8"/>
+  <circle cx="450" cy="150" r="20" fill="#6D28D9" opacity="0.9"/>
+  <circle cx="450" cy="150" r="10" fill="#7C3AED" opacity="0.9"/>
+  
+  <!-- Connection lines representing crawling -->
+  <path d="M 420 150 L 360 170" stroke="#A78BFA" stroke-width="2" stroke-dasharray="5,5"/>
+  <path d="M 420 150 L 360 220" stroke="#A78BFA" stroke-width="2" stroke-dasharray="5,5"/>
+  <path d="M 420 150 L 360 270" stroke="#A78BFA" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Database/storage -->
+  <rect x="550" y="120" width="150" height="240" rx="8" fill="#1F2937" stroke="#374151" stroke-width="2"/>
+  <rect x="570" y="150" width="110" height="15" rx="2" fill="#D1D5DB" opacity="0.2"/>
+  <rect x="570" y="180" width="110" height="15" rx="2" fill="#D1D5DB" opacity="0.2"/>
+  <rect x="570" y="210" width="110" height="15" rx="2" fill="#D1D5DB" opacity="0.2"/>
+  <rect x="570" y="240" width="110" height="15" rx="2" fill="#D1D5DB" opacity="0.2"/>
+  <rect x="570" y="270" width="110" height="15" rx="2" fill="#D1D5DB" opacity="0.2"/>
+  <rect x="570" y="300" width="110" height="15" rx="2" fill="#D1D5DB" opacity="0.2"/>
+  
+  <!-- Data flow -->
+  <path d="M 480 150 L 550 220" stroke="#A78BFA" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 480 150 C 520 150, 520 260, 550 260" stroke="#A78BFA" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Python logo suggestion -->
+  <g transform="translate(430, 320) scale(0.4)">
+    <path d="M 50 0 C -50 0, -50 100, 50 100 C 150 100, 150 0, 50 0 Z" fill="#366B98"/>
+    <path d="M 50 100 C -50 100, -50 200, 50 200 C 150 200, 150 100, 50 100 Z" fill="#FFD342"/>
+    <circle cx="20" cy="50" r="10" fill="white"/>
+    <circle cx="20" cy="150" r="10" fill="white"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">Web Scraper</text>
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="16" fill="#D1D5DB" text-anchor="middle">BeautifulSoup + Selenium</text>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#312E81"/>
+    </linearGradient>
+  </defs>
+</svg> 
