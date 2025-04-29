@@ -22,6 +22,11 @@ export default function Home() {
     // This entire code runs only on the client side
     const checkNavigation = () => {
       try {
+        // Check if sessionStorage is available
+        const testKey = 'test_storage_' + Math.random();
+        sessionStorage.setItem(testKey, '1');
+        sessionStorage.removeItem(testKey);
+        
         // Get the current time
         const currentTime = new Date().getTime();
         
@@ -62,29 +67,43 @@ export default function Home() {
         // Otherwise show loader (likely a refresh or direct navigation)
         return true;
       } catch (e) {
-        // If any errors with sessionStorage, default to showing loader
-        console.error("Error checking navigation:", e);
+        // If any errors with sessionStorage, default to showing loader but log it
+        console.warn("Error accessing sessionStorage - navigation animations may be affected:", e);
         return true;
       }
     };
+    
+    // Shorter loader time to avoid potential frustration
+    const LOADER_TIMEOUT = 4000;
     
     // Determine if we should show the loader
     if (!checkNavigation()) {
       // Skip loader for internal navigation
       setLoading(false);
     } else {
-      // Show loader with 5 second timeout
+      // Show loader with timeout
       const timer = setTimeout(() => {
         setLoading(false);
-      }, 5000);
+      }, LOADER_TIMEOUT);
       
       return () => clearTimeout(timer);
     }
+    
+    // Add a safety timeout to ensure we don't get stuck in loading state
+    const safetyTimer = setTimeout(() => {
+      setLoading(false);
+    }, 8000); // 8 seconds max loading time as a safety
+    
+    return () => clearTimeout(safetyTimer);
   }, []);
 
-  // Before hydration is complete, render nothing
+  // During hydration, show a minimal loading placeholder instead of nothing
   if (!mounted) {
-    return null;
+    return (
+      <div className="fixed inset-0 bg-black flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
   }
 
   // After hydration, render either loader or main content

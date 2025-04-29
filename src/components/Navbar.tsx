@@ -26,7 +26,7 @@ export default function Navbar() {
   const navbarVariants = {
     expanded: {
       width: "calc(100% - 2rem)",
-      maxWidth: "700px",
+      maxWidth: "750px",
       height: "4rem",
       backgroundColor: "rgba(0, 0, 0, 0.8)",
       backdropFilter: "blur(10px)",
@@ -34,7 +34,7 @@ export default function Navbar() {
     },
     collapsed: {
       width: "calc(100% - 2rem)",
-      maxWidth: "600px",
+      maxWidth: "700px",
       height: "3.5rem",
       backgroundColor: "rgba(0, 0, 0, 0.9)",
       backdropFilter: "blur(10px)",
@@ -50,9 +50,9 @@ export default function Navbar() {
   };
   
   return (
-    <div className="fixed top-4 sm:top-6 left-0 right-0 z-50 flex items-center justify-center">
+    <div className="fixed top-4 sm:top-6 left-0 right-0 z-50 flex items-center justify-center pointer-events-none isolate">
       <motion.nav 
-        className="rounded-full flex items-center justify-between px-4 sm:px-6"
+        className="rounded-full flex items-center justify-between px-4 sm:px-6 pointer-events-auto"
         initial="expanded"
         animate={scrolled ? "collapsed" : "expanded"}
         variants={navbarVariants}
@@ -66,7 +66,7 @@ export default function Navbar() {
           className="flex items-center"
           variants={logoVariants}
         >
-          <NavigationLink href="/" className="flex items-center space-x-2">
+          <NavigationLink href="/" className="flex items-center space-x-2 p-2 -m-2">
             <div className="w-6 h-6 sm:w-7 sm:h-7 bg-white rounded-md flex items-center justify-center">
               <span className="text-black font-bold text-xs sm:text-sm">Y</span>
             </div>
@@ -74,24 +74,26 @@ export default function Navbar() {
           </NavigationLink>
         </motion.div>
         
-        {/* Desktop Menu / Middle Section */}
-        <div className="hidden md:flex items-center justify-center flex-1 px-6">
-          <div className="flex items-center space-x-6 mx-auto">
+        {/* Desktop Menu / Middle Section - Simplified */}
+        <div className="hidden md:flex items-center justify-center flex-1">
+          <div className="flex items-center gap-8 mx-auto">
             <NavigationLink 
               href="/experience" 
-              className="text-white text-sm font-medium hover:text-blue-400 transition-colors"
+              className="text-white text-sm font-medium hover:text-blue-400 transition-colors px-2"
             >
               Experience
             </NavigationLink>
+            
             <NavigationLink 
               href="/projects" 
-              className="text-white text-sm font-medium hover:text-blue-400 transition-colors"
+              className="text-white text-sm font-medium hover:text-blue-400 transition-colors px-2"
             >
               Projects
             </NavigationLink>
+            
             <NavigationLink 
               href="/blog"
-              className="text-white text-sm font-medium hover:text-blue-400 transition-colors"
+              className="text-white text-sm font-medium hover:text-blue-400 transition-colors px-2"
             >
               Blog
             </NavigationLink>
@@ -112,7 +114,7 @@ export default function Navbar() {
         <div className="md:hidden flex items-center">
           <button 
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-gray-300 focus:outline-none"
+            className="text-gray-300 focus:outline-none p-2 -m-2"
             aria-label="Toggle menu"
           >
             <svg 
@@ -135,7 +137,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <motion.div 
-          className="absolute top-16 sm:top-20 left-1/2 -translate-x-1/2 w-[90%] sm:w-64 bg-black/90 backdrop-blur-md border border-blue-900/30 rounded-xl overflow-hidden"
+          className="absolute top-16 sm:top-20 left-1/2 -translate-x-1/2 w-[90%] sm:w-64 bg-black/90 backdrop-blur-md border border-blue-900/30 rounded-xl overflow-hidden pointer-events-auto"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
@@ -144,21 +146,21 @@ export default function Navbar() {
           <div className="flex flex-col py-4 px-6">
             <NavigationLink 
               href="/experience" 
-              className="text-gray-300 hover:text-blue-400 transition-colors py-2 text-sm"
+              className="text-gray-300 hover:text-blue-400 transition-colors py-3 text-sm"
               onClick={() => setMenuOpen(false)}
             >
               Experience
             </NavigationLink>
             <NavigationLink 
               href="/projects" 
-              className="text-gray-300 hover:text-blue-400 transition-colors py-2 text-sm"
+              className="text-gray-300 hover:text-blue-400 transition-colors py-3 text-sm"
               onClick={() => setMenuOpen(false)}
             >
               Projects
             </NavigationLink>
             <NavigationLink 
               href="/blog"
-              className="text-gray-300 hover:text-blue-400 transition-colors py-2 text-sm"
+              className="text-gray-300 hover:text-blue-400 transition-colors py-3 text-sm"
               onClick={() => setMenuOpen(false)}
             >
               Blog
