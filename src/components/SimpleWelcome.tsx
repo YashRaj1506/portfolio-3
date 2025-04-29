@@ -28,7 +28,14 @@ const letterVariants = {
 };
 
 // Convert text to an array of characters for typing animation
-const AnimatedText = ({ text, className = "", delay = 0, isCommand = false }) => {
+interface AnimatedTextProps {
+  text: string;
+  className?: string;
+  delay?: number;
+  isCommand?: boolean;
+}
+
+const AnimatedText = ({ text, className = "", delay = 0, isCommand = false }: AnimatedTextProps) => {
   // Format text to ensure proper line breaks for longer content
   const formattedText = text.replace(/\n/g, '\n');
   
@@ -51,7 +58,11 @@ const AnimatedText = ({ text, className = "", delay = 0, isCommand = false }) =>
 };
 
 // Blinking cursor component
-const BlinkingCursor = ({ show = true }) => {
+interface BlinkingCursorProps {
+  show?: boolean;
+}
+
+const BlinkingCursor = ({ show = true }: BlinkingCursorProps) => {
   if (!show) return null;
   
   return (
@@ -64,7 +75,17 @@ const BlinkingCursor = ({ show = true }) => {
 };
 
 // Floating tech icon component
-const FloatingTechIcon = ({ icon: Icon, x, y, size, delay, duration, color }) => {
+interface FloatingTechIconProps {
+  icon: React.ComponentType<{ size: number }>;
+  x: number;
+  y: number;
+  size: number;
+  delay: number;
+  duration: number;
+  color?: string;
+}
+
+const FloatingTechIcon = ({ icon: Icon, x, y, size, delay, duration, color }: FloatingTechIconProps) => {
   return (
     <motion.div
       className="absolute text-opacity-20 pointer-events-none"
