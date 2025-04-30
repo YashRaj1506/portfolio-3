@@ -50,7 +50,7 @@ export default function Navbar() {
   };
   
   return (
-    <div className="fixed top-4 sm:top-6 left-0 right-0 z-50 flex items-center justify-center pointer-events-none isolate">
+    <div className="fixed top-4 sm:top-6 left-0 right-0 z-[100] flex items-center justify-center pointer-events-none isolate">
       <motion.nav 
         className="rounded-full flex items-center justify-between px-4 sm:px-6 pointer-events-auto"
         initial="expanded"
@@ -114,12 +114,12 @@ export default function Navbar() {
         <div className="md:hidden flex items-center">
           <button 
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-gray-300 focus:outline-none p-2 -m-2"
+            className="text-gray-300 focus:outline-none p-3 -m-3"
             aria-label="Toggle menu"
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
-              className="h-5 w-5" 
+              className="h-6 w-6"
               fill="none" 
               viewBox="0 0 24 24" 
               stroke="currentColor"
@@ -137,7 +137,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <motion.div 
-          className="absolute top-16 sm:top-20 left-1/2 -translate-x-1/2 w-[90%] sm:w-64 bg-black/90 backdrop-blur-md border border-blue-900/30 rounded-xl overflow-hidden pointer-events-auto"
+          className="absolute top-16 sm:top-20 left-1/2 -translate-x-1/2 w-[90%] sm:w-64 bg-black/90 backdrop-blur-md border border-blue-900/30 rounded-xl overflow-hidden pointer-events-auto z-[110]"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
@@ -146,21 +146,21 @@ export default function Navbar() {
           <div className="flex flex-col py-4 px-6">
             <NavigationLink 
               href="/experience" 
-              className="text-gray-300 hover:text-blue-400 transition-colors py-3 text-sm"
+              className="text-gray-100 hover:text-blue-400 transition-colors py-4 px-2 text-base font-medium active:bg-blue-900/20 rounded"
               onClick={() => setMenuOpen(false)}
             >
               Experience
             </NavigationLink>
             <NavigationLink 
               href="/projects" 
-              className="text-gray-300 hover:text-blue-400 transition-colors py-3 text-sm"
+              className="text-gray-100 hover:text-blue-400 transition-colors py-4 px-2 text-base font-medium active:bg-blue-900/20 rounded"
               onClick={() => setMenuOpen(false)}
             >
               Projects
             </NavigationLink>
             <NavigationLink 
               href="/blog"
-              className="text-gray-300 hover:text-blue-400 transition-colors py-3 text-sm"
+              className="text-gray-100 hover:text-blue-400 transition-colors py-4 px-2 text-base font-medium active:bg-blue-900/20 rounded"
               onClick={() => setMenuOpen(false)}
             >
               Blog
@@ -168,7 +168,7 @@ export default function Navbar() {
             <div className="flex flex-col space-y-3 mt-4 pt-4 border-t border-gray-800">
               <NavigationLink 
                 href="/tech-stack" 
-                className="bg-white text-black font-medium px-4 py-2 rounded-md hover:bg-gray-100 transition-colors text-center text-sm"
+                className="bg-white text-black font-medium px-4 py-3 rounded-md hover:bg-gray-100 active:bg-gray-200 transition-colors text-center text-base"
                 onClick={() => setMenuOpen(false)}
               >
                 Tech Stack

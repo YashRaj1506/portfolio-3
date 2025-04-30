@@ -22,7 +22,7 @@ export default function NavigationLink({
 }: NavigationLinkProps) {
   const router = useRouter();
   
-  const handleClick = (_e: React.MouseEvent) => {
+  const handleClick = () => {
     // Attempt to set the navigation timestamp in sessionStorage
     if (typeof window !== 'undefined') {
       try {
@@ -39,7 +39,7 @@ export default function NavigationLink({
     
     // Adding a fallback in case Link component navigation fails
     // This creates a redundancy that ensures navigation works
-    // The e.preventDefault() is intentionally not called to allow normal Link behavior first
+    // No need for e.preventDefault() since we don't have the event parameter
     setTimeout(() => {
       // If we're still on the same page after a short delay, force navigation
       try {

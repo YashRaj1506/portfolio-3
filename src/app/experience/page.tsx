@@ -133,7 +133,7 @@ export default function Experience() {
       
       {/* Code Background Pattern */}
       <div className="fixed inset-0 pointer-events-none opacity-5 overflow-hidden z-0">
-        <pre className="text-xs sm:text-sm md:text-base text-blue-500 font-mono p-4 overflow-hidden">
+        <pre className="text-xs sm:text-sm md:text-base text-blue-500 font-mono p-4 overflow-hidden pointer-events-none">
           {`
 // Career Progression
 import { useState, useEffect } from 'react';
